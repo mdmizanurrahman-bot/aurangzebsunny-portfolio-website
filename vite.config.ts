@@ -53,7 +53,13 @@
     },
     build: {
       target: 'esnext',
-      outDir: 'build',
+      // Vercel expects the output directory to be `dist` by default.
+      // Set to `dist` to avoid "No Output Directory named 'dist'" errors.
+      outDir: 'dist',
+      // Increase the chunk size warning limit to reduce noisy warnings for
+      // large single-page app bundles. Adjust as needed or implement
+      // code-splitting/manualChunks for smaller bundles.
+      chunkSizeWarningLimit: 1000, // in KB
     },
     server: {
       port: 3000,
