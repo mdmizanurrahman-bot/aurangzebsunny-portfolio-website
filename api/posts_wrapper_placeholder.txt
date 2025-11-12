@@ -1,0 +1,3 @@
+This folder contains wrapper files (api/*.ts) which re-export the serverless handlers from src/api/*.ts so Vercel will deploy them.
+
+If you add new files under src/api you should add corresponding wrapper files under api/ or move your serverless functions to api/ directly.
